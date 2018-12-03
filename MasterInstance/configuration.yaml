@@ -1,0 +1,46 @@
+homeassistant:
+    name: Home
+    latitude: !secret latitude
+    longitude: !secret longitude
+    elevation: !secret elevation
+    unit_system: imperial
+    time_zone: !secret time_zone
+automation: !include_dir_merge_list configs/automations/
+camera: !include configs/cameras.yaml
+binary_sensor: !include configs/binary_sensors.yaml
+config:
+cover: !include configs/covers.yaml
+device_tracker: !include device_tracker.yaml
+discovery:
+ecobee:
+    api_key: !secret ecobee
+fan: !include configs/fans.yaml
+frontend:
+  themes: !include_dir_merge_named themes/
+  javascript_version: latest
+http:
+    api_password: !secret http_password
+    trusted_networks:
+      - 127.0.0.1
+      - !secret trusted_network_1
+history:
+influxdb:
+    host: !secret influx_ip
+input_boolean: !include configs/input_booleans.yaml
+input_number: !include configs/input_numbers.yaml
+input_select: !include configs/input_selects.yaml
+light: !include configs/lights.yaml
+logbook:
+media_player: !include configs/media_player.yaml
+mqtt:
+    broker: !secret mqtt_ip
+notify: !include configs/notify.yaml
+script: !include_dir_merge_named configs/scripts/
+sensor: !include configs/sensors.yaml
+shell_command: !include configs/shell.yaml  
+sun:
+switch: !include configs/switches.yaml
+telegram_bot: !include configs/telegram_bots.yaml
+updater:
+wake_on_lan:
+tts: !include configs/tts.yaml

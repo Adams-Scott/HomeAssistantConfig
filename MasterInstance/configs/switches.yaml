@@ -1,0 +1,75 @@
+#----------------------------------------------------
+## TV
+##----------------------------------------------------   
+#  - platform: mqtt
+#    name: "Speaker Right"
+#    state_topic: "/relay/confirm/1/"
+#    command_topic: "relay/topic/1/"
+#    payload_on: "1"
+#    payload_off: "0"
+#    optimistic: false
+#    retain: true
+#    icon: mdi:speaker
+#  - platform: mqtt
+#    name: "Speaker Left"
+#    state_topic: "/relay/confirm/2/"
+#    command_topic: "relay/topic/2/"
+#    payload_on: "1"
+#    payload_off: "0"
+#    optimistic: false
+#    retain: true
+#    icon: mdi:speaker
+#  - platform: mqtt
+#    name: "Relay_3"
+#    state_topic: "/relay/confirm/3/"
+#    command_topic: "relay/topic/3/"
+#    payload_on: "1"
+#    payload_off: "0"
+#    optimistic: false
+#    retain: true
+#  - platform: mqtt
+#    name: "Relay_4"
+#    state_topic: "/relay/confirm/4/"
+#    command_topic: "relay/topic/4/"
+#    payload_on: "1"
+#    payload_off: "0"
+#    optimistic: false
+#    retain: true
+
+#----------------------------------------------------
+# Phone
+#----------------------------------------------------    
+# Android phone sends on/off via tasker when charging. used for sleep tracking.
+  - platform: mqtt
+    name: "Phone Charging Switch"
+    state_topic: "phone/charging"
+    command_topic: "phone/charging"
+    payload_on: "ON"
+    payload_off: "OFF"
+    optimistic: false
+    
+#----------------------------------------------------
+# IR
+#----------------------------------------------------    
+ 
+  - platform: broadlink
+    host: !secret broadlink_ip
+    mac: broadlink_mac
+    
+#----------------------------------------------------
+# WOL
+#----------------------------------------------------
+  - platform: wake_on_lan
+    unique_id: "cl"
+    name: "cl"
+    mac_address: !secret cl_mac
+    host: $secret cl_ip
+    turn_off:
+        service: shell_command.cube_sleep
+    
+  - platform: wake_on_lan
+    unique_id: "co"
+    name: "co"
+    mac_address: !secret co_mac
+    host: !secret co_ip
+    

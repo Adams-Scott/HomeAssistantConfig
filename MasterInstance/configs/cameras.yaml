@@ -1,0 +1,20 @@
+    # For Laview NVR, use the following input format
+    # rtsp://user:password@192.168.0.1:8554/PSIA/streaming/channels/101
+    # user = username
+    # pasword = pasword
+    # 192.168.0.1 = NVR IP address (should be static)
+    # 101 = First number is the camera and second number is for quality (1 or 2).
+    #       101 would be first camera at highest quality. 402 would be 4th cam at
+    #       lowest quality. I use 2.
+  - platform: ffmpeg
+    name: front_door
+    input: !secret front_door_camera
+  - platform: ffmpeg
+    name: front_left
+    input: !secret front_left_camera
+  - platform: ffmpeg
+    name: front_right
+    input: !secret front_right_camera
+  - platform: ffmpeg
+    name: garage
+    input: !secret garage_camera

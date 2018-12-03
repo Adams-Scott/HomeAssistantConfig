@@ -1,0 +1,230 @@
+resources:
+  - url: /local/mini-media-player.js
+    type: js
+  - url: /local/surveillance-card.js?v=0
+    type: module
+  - url: /local/monster-card.js?v=1
+    type: js
+
+name: My Awesome Home
+views:
+  - name: Living Room
+    icon: mdi:sofa
+    title: Living Room
+    id: lr
+    cards:
+      - id: d06e6ca0da814fcfb646b5d58dbfbfd4  # Automatically created id
+        type: entities
+        title: Lights
+        show_header_toggle: false
+        entities:
+          - entity: light.l1
+            icon: mdi:floor-lamp
+          - entity: light.l2
+            icon: mdi:track-light
+          - entity: light.l4
+            icon: mdi:globe-model
+          - entity: light.tv_led_strip
+            icon: mdi:led-outline
+          - entity: light.l3
+            icon: mdi:door
+          - entity: light.lc1
+            icon: mdi:pine-tree
+          - entity: light.lc2
+            icon: mdi:pine-tree
+      - id: 999b19ce952647bd9a29aa08a04619cb  # Automatically created id
+        type: entities
+        title: Entertainment
+        show_header_toggle: false
+        entities:
+          - entity: switch.cl
+            name: Computer
+            icon: mdi:desktop-mac-dashboard
+          - entity: input_boolean.amp_power
+          - entity: input_select.amp_input
+            icon: mdi:audio-video
+          - entity: script.smsl_power
+            name: Power Override
+            icon: mdi:power
+          - entity: script.smsl_source
+            name: input Override
+            icon: mdi:source-branch
+      - id: 17f3b29cee3e45c7b7b04831c28f9f32  # Automatically created id
+        type: media-control
+        entity: media_player.living_room_tv
+
+  - name: Bedroom
+    icon: mdi:hotel
+    title: Bedroom
+    id: br
+    cards:
+      - id: 7a1284f5d0584f8396075415f84cebbc  # Automatically created id
+        type: entities
+        title: Lights
+        show_header_toggle: false
+        entities:
+          - entity: light.b1
+            name: Right Nighstand
+            icon: mdi:lamp
+          - entity: light.b2
+            name: Left Nighstand
+            icon: mdi:lamp
+          - entity: light.b3
+            name: Fan Light
+            icon: mdi:track-light
+      - id: da6bc7190a8045c8a7b114509afca129  # Automatically created id
+        type: entities
+        title: Fan
+        show_header_toggle: false
+        entities:
+          - entity: fan.fb1
+            name: Fan
+          - entity: script.bed_fan_30
+            name: 30 Min Fan
+            icon: mdi:av-timer
+          - entity: script.bed_fan_60
+            name: 1 Hour Fan
+            icon: mdi:av-timer
+          - entity: script.bed_fan_120
+            name: 2 Hour Fan
+            icon: mdi:av-timer
+          - entity: script.bed_fan_240
+            name: 4 Hour Fan
+            icon: mdi:av-timer
+      - id: b7fd02931c8f4437b9a19a70c69db5e7  # Automatically created id
+        type: media-control
+        entity: media_player.bedroom
+
+  - name: Garage
+    icon: mdi:car-hatchback
+    title: Garage
+    id: Garage
+    cards:
+      - id: 65f3a364bf684aa48460874fab1f39bf  # Automatically created id
+        type: entities
+        title: Entities
+        show_header_toggle: false
+        entities:
+          - entity: light.g1
+          - entity: cover.garage_door
+
+  - name: Kitchen
+    icon: mdi:fridge
+    title: Kitchen
+    id: Kitchen
+    cards:
+      - id: 4a59e1cd26f94b42a1b4a661978bcc0a  # Automatically created id
+        type: entities
+        title: Lights
+        show_header_toggle: false
+        entities:
+          - entity: light.k1
+          - entity: light.k2
+            icon: mdi:water-pump
+          - entity: light.kc1
+            icon: mdi:pine-tree
+
+  - name: Office
+    icon: mdi:desktop-classic
+    title: Office
+    id: Office
+    cards:
+      - id: 945434b4ea8243a095acc8056e3d5249  # Automatically created id
+        type: entities
+        title: Entities
+        show_header_toggle: false
+        entities:
+          - entity: light.o1
+            name: Overhead
+          - entity: light.o2
+            icon: mdi:desk-lamp
+            name: Desk
+          - entity: switch.co
+            icon: mdi:desktop-mac-dashboard
+            name: Computer
+          - entity: input_boolean.guest_office
+
+  - name: House
+    icon: mdi:home
+    title: House
+    id: House
+    cards:
+      - id: cea54a1a012e4de5b3958f05687d29da  # Automatically created id
+        type: entities
+        title: Switches
+        show_header_toggle: false
+        entities:
+          - entity: input_boolean.guest
+      - id: 53b69623b67f45d59f5a713bb47264b5  # Automatically created id
+        type: thermostat
+        entity: climate.my_ecobee3
+      - id: 810c39e04ee748898dc26eee5f9d46bb  # Automatically created id
+        type: custom:monster-card
+        show_empty: false
+        card:
+          type: entities
+          title: Lights
+        filter:
+          include:
+            - domain: light
+
+  - name: Cameras
+    icon: mdi:video
+    title: Cameras
+    id: Cameras
+    panel: true
+    cards:
+      - id: c68edba6aec44367b2aabf1ca0b9c5b5  # Automatically created id
+        type: custom:surveillance-card
+        thumb_interval: 5
+        update_interval: 1
+        cameras:
+          - entity: camera.front_door
+          - entity: camera.front_left
+          - entity: camera.front_right
+          - entity: camera.garage
+  - name: Cameras2
+    icon: mdi:video
+    title: Cameras2
+    id: Cameras2
+    panel: true
+    cards:
+      - id: ca0729eff05e4359872361f05895cc38  # Automatically created id
+        type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+          #    - entity: camera.front_door
+          #    - entity: camera.front_left
+          #    - entity: camera.front_right
+              - type: picture-entity
+                entity: camera.front_left
+              - type: picture-entity
+                entity: camera.front_right
+          - type: horizontal-stack
+            cards:
+          #- id: 89020da416df4a228f91c2f7dfe6d5ce  # Automatically created id
+          #  type: entities
+          #  title: Entities
+          #  show_header_toggle: false
+          #  entities:
+          #    - entity: camera.front_door
+          #    - entity: camera.front_left
+          #    - entity: camera.front_right
+              - type: picture-entity
+                entity: camera.front_door
+              - type: picture-entity
+                entity: camera.garage
+              #camera_image: camera.garage
+  - name: Playground
+    #icon:
+    title: Playground
+    id: Playground
+    panel: true
+    cards:
+      - type: picture-elements
+        image: /custom_ui/floorplan/dnNTl2b.jpg
+        elements:
+          - type: state-icon
+            tap_action: show_header_toggle
+            entity: light.o2

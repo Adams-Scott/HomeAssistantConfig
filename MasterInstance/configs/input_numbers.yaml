@@ -1,0 +1,13 @@
+tv_animation_speed:
+    name: TV Animation Speed
+    initial: 150
+    min: 1
+    max: 150
+    step: 10
+office_blinds:
+    name: Office Blinds
+    initial: 90
+    min: 0
+    max:  180
+    step: 1
+    unit_of_measurement: "°"

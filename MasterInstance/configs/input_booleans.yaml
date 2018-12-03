@@ -1,0 +1,38 @@
+test:
+    name: test
+    initial: off
+    icon: mdi:beaker
+amp_power:
+    name: Amp Power
+    icon: mdi:speaker
+guest:
+    name: Guest Mode
+    icon: mdi:account-multiple
+guest_office:
+    name: Office Guest Mode
+    initial: off
+    icon: mdi:hotel
+kitchen_automations:
+    name: Kitchen Automations
+    initial: on
+    icon: mdi:water-pump
+office_automations:
+    name: Office Automations
+    initial: on
+    icon: mdi:pen
+garage_automations:
+    name: Garage Automations
+    initial: on
+    icon: mdi:garage
+outside_automations:
+    name: Outside Automations
+    initial: on
+    icon: mdi:tree
+bedroom_automations:
+    name: Bedroom Automations
+    initial: on
+    icon: mdi:hotel
+living_room_automations:
+    name: Living Room Automations
+    initial: on
+    icon: mdi:sofa

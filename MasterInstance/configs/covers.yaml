@@ -1,0 +1,6 @@
+  - platform: gogogate2
+    username: !secret gogo_user
+    password: !secret gogo_password
+    ip_address: !secret gogo_ip
+    name: 'Garage Door'
+    unique_id: 'gd'

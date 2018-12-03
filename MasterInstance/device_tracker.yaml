@@ -1,0 +1,13 @@
+#  - platform: ping
+#    count: 2
+#    hosts:
+#      TV: 192.168.0.36
+      
+  - platform: unifi
+    host: !secret unifi_ip
+    verify_ssl: False
+    username: !secret unifiUser
+    password: !secret unifiPass
+    ssid_filter:
+      - !secret unifi_network1
+      - !secret unifi_network2

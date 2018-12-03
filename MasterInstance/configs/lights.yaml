@@ -1,0 +1,144 @@
+  - platform: mqtt_json
+    unique_id: "la1"
+    name: "TV LED Strip"
+    state_topic: "led/tvcab"
+    command_topic: "led/tvcab/set"
+    effect: true
+    effect_list:
+      - bpm
+      - candy cane  
+      - confetti  
+      - cyclon rainbow  
+      - dots  
+      - fire  
+      - glitter  
+      - juggle  
+      - lightning
+      - noise  
+      - police all  
+      - police one  
+      - rainbow  
+      - rainbow with glitter  
+      - ripple  
+      - sinelon  
+      - solid  
+      - twinkle  
+    brightness: true
+    flash: true
+    rgb: true
+    optimistic: false
+    qos: 0
+
+#---------------------------------------------#
+# MQTT Lights #
+#---------------------------------------------# 
+  - platform: mqtt
+    unique_id: b3
+    name: "b3"
+    command_topic: "cmnd/sonoff/bedrelay/power2"
+    state_topic: "stat/sonoff/bedrelay/POWER2"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+
+#---------------------------------------------#
+# Christmas Lights #
+#---------------------------------------------# 
+  - platform: mqtt
+    unique_id: lc1
+    name: "Living Room Christmas Tree"
+    command_topic: "cmnd/sonoff/relay1/POWER"
+    state_topic: "stat/sonoff/relay1/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    unique_id: lc2
+    name: "Living Room Christmas Couch"
+    command_topic: "cmnd/sonoff/relay2/POWER"
+    state_topic: "stat/sonoff/relay2/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    unique_id: kc1
+    name: "Kitchen Christmas Lights"
+    command_topic: "cmnd/sonoff/relay3/POWER"
+    state_topic: "stat/sonoff/relay3/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+#---------------------------------------------#
+# Z-Wave Bridge #
+#---------------------------------------------# 
+  - platform: mqtt
+    unique_id: "g1"
+    name: "g1"
+    command_topic: "bridge/garage/command"
+    state_topic: "bridge/garage/state"
+    payload_on: "on"
+    payload_off: "off"
+    optimistic: false
+
+  - platform: mqtt
+    unique_id: "y1"
+    name: "y1"
+    command_topic: "bridge/frontdoor/command"
+    state_topic: "bridge/frontdoor/state"
+    payload_on: "on"
+    payload_off: "off"
+    optimistic: false
+
+  - platform: mqtt
+    unique_id: "k1"
+    name: "k1"
+    command_topic: "bridge/kitchen/command"
+    state_topic: "bridge/kitchen/state"
+    payload_on: "on"
+    payload_off: "off"
+    optimistic: false
+
+  - platform: mqtt
+    unique_id: "k2"
+    name: "k2"
+    command_topic: "bridge/kitchensink/command"
+    state_topic: "bridge/kitchensink/state"
+    payload_on: "on"
+    payload_off: "off"
+    optimistic: false
+
+  - platform: mqtt
+    unique_id: "l3"
+    name: "l3"
+    command_topic: "bridge/foyer/command"
+    state_topic: "bridge/foyer/state"
+    payload_on: "on"
+    payload_off: "off"
+    optimistic: false
+
+  - platform: mqtt
+    unique_id: "o1"
+    name: "o1"
+    # light switch moved from patio to office
+    command_topic: "bridge/patio/command"
+    state_topic: "bridge/patio/state"
+    payload_on: "on"
+    payload_off: "off"
+    optimistic: false
+
+  - platform: mqtt
+    unique_id: "d1"
+    name: "d1"
+    command_topic: "bridge/dining/command"
+    state_topic: "bridge/dining/state"
+    payload_on: "on"
+    payload_off: "off"
+    optimistic: false
+
+

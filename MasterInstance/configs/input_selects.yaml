@@ -1,0 +1,9 @@
+amp_input:
+    name: Amp Input
+    options:
+      - "USB"
+      - "opt1"
+      - "opt2"
+      - "coax"
+      - "BT"
+      - "aux"

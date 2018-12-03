@@ -1,0 +1,9 @@
+  - platform: mqtt
+    unique_id: fb1
+    name: "fb1"
+    command_topic: "cmnd/sonoff/bedrelay/power1"
+    state_topic: "stat/sonoff/bedrelay/POWER1"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true

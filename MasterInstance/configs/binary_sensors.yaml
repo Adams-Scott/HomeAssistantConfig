@@ -1,0 +1,83 @@
+  - platform: mqtt
+    unique_id: "mk"
+    name: "mk"
+    state_topic: "bridge/m/kitchen/state"
+    payload_on: "on"
+    payload_off: "off"
+
+  - platform: mqtt
+    unique_id: "mg"
+    name: "mg"
+    state_topic: "bridge/m/garage/state"
+    payload_on: "on"
+    payload_off: "off"
+
+  - platform: mqtt
+    unique_id: "ml"
+    name: "ml"
+    state_topic: "bridge/m/living/state"
+    payload_on: "on"
+    payload_off: "off"
+
+  - platform: mqtt
+    unique_id: "mb"
+    name: "mb"
+    state_topic: "bridge/m/bedroom/state"
+    payload_on: "on"
+    payload_off: "off"
+
+  - platform: mqtt
+    unique_id: "mo"
+    name: "mo"
+    state_topic: "bridge/m/office/state"
+    payload_on: "255"
+    payload_off: "0"
+
+  - platform: mqtt
+    unique_id: "wk1"
+    name: "wk1"
+    state_topic: "bridge/w/kitchen/state"
+    payload_on: "22"
+    payload_off: "23"
+
+  - platform: mqtt
+    unique_id: "dk"
+    name: "dk"
+    state_topic: "bridge/w/garage/state"
+    payload_on: "22"
+    payload_off: "23"
+
+  - platform: mqtt
+    unique_id: "dl"
+    name: "dl"
+    state_topic: "bridge/w/front/state"
+    payload_on: "22"
+    payload_off: "23"
+
+  - platform: mqtt
+    unique_id: "dd"
+    name: "dd"
+    state_topic: "bridge/w/slider/state"
+    payload_on: "22"
+    payload_off: "23"
+    
+  - platform: mqtt
+    unique_id: "w_na"
+    name: "w_na"
+    state_topic: "bridge/w/extra/state"
+    payload_on: "23"
+    payload_off: "22"
+      
+  - platform: mqtt
+    unique_id: "md"
+    name: "md"
+    state_topic: "bridge/w/Slider/state"
+    payload_on: "23"
+    payload_off: "22"
+
+  - platform: mqtt
+    unique_id: "wo"
+    name: "wo"
+    state_topic: "window/office/window"
+    payload_on: "on"
+    payload_off: "off"
