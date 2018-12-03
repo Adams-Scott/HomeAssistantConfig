@@ -1,0 +1,387 @@
+#--------------------------------------------------------------------#
+# Garage
+#--------------------------------------------------------------------#
+  - alias: 'Garage On'
+    trigger:
+      - platform: mqtt
+        topic: "bridge/garage/command"
+        payload: "on"
+      - platform: state
+        entity_id: switch.garage_switch
+        to: "on"
+    action:
+      - service: switch.turn_on
+        entity_id: switch.garage_switch
+      - service: mqtt.publish
+        data:
+            topic: "bridge/garage/state"
+            payload: "on"
+            
+  - alias: 'Garage off'
+    trigger:
+      - platform: mqtt
+        topic: "bridge/garage/command"
+        payload: "off"
+      - platform: state
+        entity_id: switch.garage_switch
+        to: "off"
+    action:
+      - service: switch.turn_off
+        entity_id: switch.garage_switch
+      - service: mqtt.publish
+        data:
+            topic: "bridge/garage/state"
+            payload: "off"
+
+#--------------------------------------------------------------------#
+# Front Door Light
+#--------------------------------------------------------------------#
+  - alias: 'Front Door On'
+    trigger:
+      - platform: mqtt
+        topic: "bridge/frontdoor/command"
+        payload: "on"
+      - platform: state
+        entity_id: switch.frontdoor_switch
+        to: "on"
+    action:
+      - service: switch.turn_on
+        entity_id: switch.frontdoor_switch
+      - service: mqtt.publish
+        data:
+            topic: "bridge/frontdoor/state"
+            payload: "on"
+            
+  - alias: 'Front Door Off'
+    trigger:
+      - platform: mqtt
+        topic: "bridge/frontdoor/command"
+        payload: "off"
+      - platform: state
+        entity_id: switch.frontdoor_switch
+        to: "off"
+    action:
+      - service: switch.turn_off
+        entity_id: switch.frontdoor_switch
+      - service: mqtt.publish
+        data:
+            topic: "bridge/frontdoor/state"
+            payload: "off"
+
+#--------------------------------------------------------------------#
+# Kitchen
+#--------------------------------------------------------------------#
+  - alias: 'Kitchen On'
+    trigger:
+      - platform: mqtt
+        topic: "bridge/kitchen/command"
+        payload: "on"
+      - platform: state
+        entity_id: switch.kitchen_switch
+        to: "on"
+    action:
+      - service: switch.turn_on
+        entity_id: switch.kitchen_switch
+      - service: mqtt.publish
+        data:
+            topic: "bridge/kitchen/state"
+            payload: "on"
+            
+  - alias: 'Kitchen off'
+    trigger:
+      - platform: mqtt
+        topic: "bridge/kitchen/command"
+        payload: "off"
+      - platform: state
+        entity_id: switch.kitchen_switch
+        to: "off"
+    action:
+      - service: switch.turn_off
+        entity_id: switch.kitchen_switch
+      - service: mqtt.publish
+        data:
+            topic: "bridge/kitchen/state"
+            payload: "off"
+
+#--------------------------------------------------------------------#
+# Kitchen Sink
+#--------------------------------------------------------------------#
+  - alias: 'Kitchen Sink On'
+    trigger:
+      - platform: mqtt
+        topic: "bridge/kitchensink/command"
+        payload: "on"
+      - platform: state
+        entity_id: switch.kitchensink_switch
+        to: "on"
+    action:
+      - service: switch.turn_on
+        entity_id: switch.kitchensink_switch
+      - service: mqtt.publish
+        data:
+            topic: "bridge/kitchensink/state"
+            payload: "on"
+            
+  - alias: 'Kitchen Sink off'
+    trigger:
+      - platform: mqtt
+        topic: "bridge/kitchensink/command"
+        payload: "off"
+      - platform: state
+        entity_id: switch.kitchensink_switch
+        to: "off"
+    action:
+      - service: switch.turn_off
+        entity_id: switch.kitchensink_switch
+      - service: mqtt.publish
+        data:
+            topic: "bridge/kitchensink/state"
+            payload: "off"
+
+#--------------------------------------------------------------------#
+# Foyer
+#--------------------------------------------------------------------#
+  - alias: 'Foyer On'
+    trigger:
+      - platform: mqtt
+        topic: "bridge/foyer/command"
+        payload: "on"
+      - platform: state
+        entity_id: switch.livingroomdoor_switch
+        to: "on"
+    action:
+      - service: switch.turn_on
+        entity_id: switch.livingroomdoor_switch
+      - service: mqtt.publish
+        data:
+            topic: "bridge/foyer/state"
+            payload: "on"
+            
+  - alias: 'Foyer off'
+    trigger:
+      - platform: mqtt
+        topic: "bridge/foyer/command"
+        payload: "off"
+      - platform: state
+        entity_id: switch.livingroomdoor_switch
+        to: "off"
+    action:
+      - service: switch.turn_off
+        entity_id: switch.livingroomdoor_switch
+      - service: mqtt.publish
+        data:
+            topic: "bridge/foyer/state"
+            payload: "off"
+
+#--------------------------------------------------------------------#
+# Patio
+#--------------------------------------------------------------------#
+  - alias: 'Patio On'
+    trigger:
+      - platform: mqtt
+        topic: "bridge/patio/command"
+        payload: "on"
+      - platform: state
+        entity_id: switch.patio_switch
+        to: "on"
+    action:
+      - service: switch.turn_on
+        entity_id: switch.patio_switch
+      - service: mqtt.publish
+        data:
+            topic: "bridge/patio/state"
+            payload: "on"
+            
+  - alias: 'Patio off'
+    trigger:
+      - platform: mqtt
+        topic: "bridge/patio/command"
+        payload: "off"
+      - platform: state
+        entity_id: switch.patio_switch
+        to: "off"
+    action:
+      - service: switch.turn_off
+        entity_id: switch.patio_switch
+      - service: mqtt.publish
+        data:
+            topic: "bridge/patio/state"
+            payload: "off"
+
+#--------------------------------------------------------------------#
+# Dining Room
+#--------------------------------------------------------------------#
+  - alias: 'Dining On'
+    trigger:
+      - platform: mqtt
+        topic: "bridge/dining/command"
+        payload: "on"
+      - platform: state
+        entity_id: light.dining_room_level
+        to: "on"
+    action:
+      - service: switch.turn_on
+        entity_id: light.dining_room_level
+      - service: mqtt.publish
+        data:
+            topic: "bridge/dining/state"
+            payload: "on"
+            
+  - alias: 'Dining Off'
+    trigger:
+      - platform: mqtt
+        topic: "bridge/dining/command"
+        payload: "off"
+      - platform: state
+        entity_id: light.dining_room_level
+        to: "off"
+    action:
+      - service: switch.turn_off
+        entity_id: light.dining_room_level
+      - service: mqtt.publish
+        data:
+            topic: "bridge/dining/state"
+            payload: "off"
+
+#--------------------------------------------------------------------#
+# Kitchen Motion 4
+#--------------------------------------------------------------------#
+  - alias: 'Kitchen Motion'
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.ecolink_motion_detector_sensor_4
+    action:
+      - service: mqtt.publish
+        data:
+            topic: "bridge/m/kitchen/state"
+            payload_template: "{{states('binary_sensor.ecolink_motion_detector_sensor_4')}}"
+
+#--------------------------------------------------------------------#
+# Garage Motion 3
+#--------------------------------------------------------------------#
+  - alias: 'Garage Motion'
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.ecolink_motion_detector_sensor_3
+    action:
+      - service: mqtt.publish
+        data:
+            topic: "bridge/m/garage/state"
+            payload_template: "{{states('binary_sensor.ecolink_motion_detector_sensor_3')}}"
+
+#--------------------------------------------------------------------#
+# Living Motion 
+#--------------------------------------------------------------------#
+  - alias: 'Living Motion'
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.ecolink_motion_detector_sensor
+    action:
+      - service: mqtt.publish
+        data:
+            topic: "bridge/m/living/state"
+            payload_template: "{{states('binary_sensor.ecolink_motion_detector_sensor')}}"
+
+#--------------------------------------------------------------------#
+# Office Motion
+#--------------------------------------------------------------------#
+  - alias: 'Office Motion'
+    trigger:
+      - platform: state
+        entity_id: sensor.vision_zp3102_pir_motion_sensor_alarm_level
+    action:
+      - service: mqtt.publish
+        data:
+            topic: "bridge/m/office/state"
+            payload_template: "{{states('sensor.vision_zp3102_pir_motion_sensor_alarm_level')}}"
+
+#--------------------------------------------------------------------#
+# Bedroom Motion 2
+#--------------------------------------------------------------------#
+  - alias: 'Bedroom Motion'
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.ecolink_motion_detector_sensor_2
+    action:
+      - service: mqtt.publish
+        data:
+            topic: "bridge/m/bedroom/state"
+            payload_template: "{{states('binary_sensor.ecolink_motion_detector_sensor_2')}}"
+
+#--------------------------------------------------------------------#
+# Kitchen Window
+#--------------------------------------------------------------------#
+  - alias: "Kitchen Window"
+    trigger:
+      - platform: state
+        entity_id: sensor.hank_hkzwdws01_doorwindow_sensor_access_control_2
+    action:
+      - service: mqtt.publish
+        data:
+          topic: "bridge/w/kitchen/state"
+          payload_template: "{{states('sensor.hank_hkzwdws01_doorwindow_sensor_access_control_2')}}"
+
+#--------------------------------------------------------------------#
+# Garage Door
+#--------------------------------------------------------------------#
+  - alias: "Garage Door"
+    trigger:
+      - platform: state
+        entity_id: sensor.doorsensor1_access_control
+    action:
+      - service: mqtt.publish
+        data:
+          topic: "bridge/w/garage/state"
+          payload_template: "{{states('sensor.doorsensor1_access_control')}}"
+
+#--------------------------------------------------------------------#
+# Front Door
+#--------------------------------------------------------------------#
+  - alias: "Front Door"
+    trigger:
+      - platform: state
+        entity_id: sensor.doorsensor2_access_control
+    action:
+      - service: mqtt.publish
+        data:
+          topic: "bridge/w/front/state"
+          payload_template: "{{states('sensor.doorsensor2_access_control')}}"
+
+#--------------------------------------------------------------------#
+# Slider Door
+#--------------------------------------------------------------------#
+  - alias: "Slider"
+    trigger:
+      - platform: state
+        entity_id: sensor.doorsensor3_access_control
+    action:
+      - service: mqtt.publish
+        data:
+          topic: "bridge/w/slider/state"
+          payload_template: "{{states('sensor.doorsensor3_access_control')}}"
+
+#--------------------------------------------------------------------#
+# Extra
+#--------------------------------------------------------------------#
+  - alias: "extra"
+    trigger:
+      - platform: state
+        entity_id: sensor.hank_hkzwdws01_doorwindow_sensor_access_control_3
+    action:
+      - service: mqtt.publish
+        data:
+          topic: "bridge/w/extra/state"
+          payload_template: "{{states('sensor.hank_hkzwdws01_doorwindow_sensor_access_control_3')}}"
+
+#--------------------------------------------------------------------#
+# Office Temperature
+#--------------------------------------------------------------------#
+  - alias: "Office Temperature"
+    trigger:
+      - platform: state
+        entity_id: sensor.vision_zp3102_pir_motion_sensor_temperature
+    action:
+      - service: mqtt.publish
+        data:
+          topic: "bridge/t/office/state"
+          payload_template: "{{states('sensor.vision_zp3102_pir_motion_sensor_temperature')}}"

@@ -1,0 +1,17 @@
+homeassistant:
+  name: zwave
+  unit_system: imperial
+  time_zone: !secret time_zone
+  customize: !include customize.yaml
+
+frontend:
+config:
+http:
+updater:
+automation: !include automations.yaml
+script: !include scripts.yaml
+zwave:
+  usb_path: /dev/ttyACM0
+
+mqtt:
+  broker: !secret mqtt_broker
